@@ -7,6 +7,9 @@ updates:
       interval: daily
       time: "03:00"
     open-pull-requests-limit: 10
+    cooldown:
+      exclude:
+        - "uk.gov.service.payments:*"
     labels:
       - dependencies
       - govuk-pay
@@ -20,9 +23,6 @@ updates:
       - dependency-name: "eclipse-temurin"
         versions:
           - "> 25"
-    cooldown:
-      exclude:
-        - "uk.gov.service.payments:*"
     open-pull-requests-limit: 10
     labels:
       - dependencies
