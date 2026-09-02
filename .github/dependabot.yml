@@ -20,6 +20,9 @@ updates:
       - dependency-name: "eclipse-temurin"
         versions:
           - "> 25"
+    cooldown:
+      exclude:
+        - "uk.gov.service.payments:*"
     open-pull-requests-limit: 10
     labels:
       - dependencies
