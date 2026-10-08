@@ -1,49 +1,48 @@
 ---
 version: 2
 updates:
-- package-ecosystem: maven
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "03:00"
-  open-pull-requests-limit: 10
-  cooldown:
-    exclude:
-    - "uk.gov.service.payments:*"
-  labels:
-  - dependencies
-  - govuk-pay
-  - java
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "03:00"
-  ignore:
-  - dependency-name: "eclipse-temurin"
-    versions:
-    - "> 25"
-  open-pull-requests-limit: 10
-  labels:
-  - dependencies
-  - govuk-pay
-  - docker
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "03:00"
-  open-pull-requests-limit: 0
-  labels:
-  - dependencies
-  - govuk-pay
-  - github_actions
-- package-ecosystem: github-actions
-  directory: /.github/workflows
-  schedule:
-    interval: daily
-    time: 03:00
-  open-pull-requests-limit: 3
-  cooldown: 3
-  allow:
-  - dependency-name: govuk-pay/pay-ci/*
+  - package-ecosystem: maven
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "03:00"
+    open-pull-requests-limit: 10
+    cooldown:
+      exclude:
+        - "uk.gov.service.payments:*"
+    labels:
+      - dependencies
+      - govuk-pay
+      - java
+  - package-ecosystem: docker
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "03:00"
+    ignore:
+      - dependency-name: "eclipse-temurin"
+        versions:
+          - "> 25"
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+      - govuk-pay
+      - docker
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "03:00"
+    open-pull-requests-limit: 0
+    labels:
+      - dependencies
+      - govuk-pay
+      - github_actions
+  - package-ecosystem: github-actions
+    directory: /.github/workflows
+    schedule:
+      interval: daily
+      time: "03:00"
+    open-pull-requests-limit: 3
+    allow:
+      - dependency-name: govuk-pay/pay-ci/*
