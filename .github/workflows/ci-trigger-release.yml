@@ -7,7 +7,7 @@ on:
 jobs:
   authorised_user_check:
     runs-on: ubuntu-latest
-    if: github.actor == 'alphagov-pay-pay-ci-concourse'
+    if: github.actor == 'alphagov-pay-ci-concourse'
     steps:
       - run: echo "alphagov-pay-ci-concourse triggered a new release"
 
